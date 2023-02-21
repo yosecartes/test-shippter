@@ -13,6 +13,19 @@ exports.get = function(res, req){
     return req.json(arrayData)
 }
 
-exports.post = function(res, req){
-    
+exports.new = function(res, req){
+    let lengthArray = arrayData.length
+    let newID = arrayData[lengthArray -1].id + 1
+    let body = res.body;
+    let tmpArrayData = arrayData
+    body.id = newID;
+    tmpArrayData.push(body)
+
+    fs.writeFile(filePath, JSON.stringify(tmpArrayData), function(err){
+        if(err){
+            req.status(500).json({message:'Error al insertar datos'})
+        }
+    })
+
+    return req.json({message: 'dato creado con éxito'})
 }
