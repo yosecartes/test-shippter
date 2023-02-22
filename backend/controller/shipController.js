@@ -48,3 +48,20 @@ exports.update = function (res, req) {
     return req.json({ message: 'Dato actualizado con éxito' })
 
 }
+
+exports.delete = function (res, req) {
+    let body = res.body;
+    let id = body.id;
+
+    let index = arrayData.map(e => e.id).indexOf(id);
+    arrayData.splice(index, 1);
+
+    fs.writeFile(filePath, JSON.stringify(arrayData), function (err) {
+        if (err) {
+            req.status(500).json({ message: 'Error al insertar datos' })
+        }
+    })
+
+    return req.json({ message: 'Dato eliminado con éxito' })
+
+}
