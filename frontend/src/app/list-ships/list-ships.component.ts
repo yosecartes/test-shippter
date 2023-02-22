@@ -40,19 +40,24 @@ export class ListShipsComponent implements AfterViewInit, OnInit {
 
   openDialogDelete(enterAnimationDuration: string, exitAnimationDuration: string, ship: any): void {
     this.dialog.open(DialogDeleteComponent, {
-      width: '700px',
+      width: '200px',
+      height: '100px',
+      disableClose: true,
       enterAnimationDuration,
       exitAnimationDuration,
-      data: ship
+      data: ship,
+      panelClass: 'custom-modalbox'
     });
   }
 
   openDialogUpdate(enterAnimationDuration: string, exitAnimationDuration: string, ship: any): void {
     this.dialog.open(DialogUpdateComponent, {
       width: '700px',
+      height:'500px',
       enterAnimationDuration,
       exitAnimationDuration,
-      data: ship
+      data: ship,
+      panelClass: 'custom-modalbox'
     });
   }
 
@@ -61,6 +66,7 @@ export class ListShipsComponent implements AfterViewInit, OnInit {
       width: '700px',
       enterAnimationDuration,
       exitAnimationDuration,
+      panelClass: 'custom-modalbox'
     });
   }
 

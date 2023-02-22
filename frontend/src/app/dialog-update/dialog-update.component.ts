@@ -38,7 +38,8 @@ export class DialogUpdateComponent implements OnInit {
   
   onSubmit(){
     this.listShipService.updateShip(this.ship.value).subscribe( res => {
-      this.dialog.closeAll()
+      this.dialog.closeAll();
+      location.reload();
     })
     
   }
