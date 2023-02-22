@@ -6,6 +6,6 @@ router.route('/')
     .get(shipController.get)
     .post(shipController.new)
     .put(shipController.update)
-    //.delete(shipController.delete);
+    .delete(shipController.delete);
 
 module.exports = router;
