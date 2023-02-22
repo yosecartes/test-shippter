@@ -1,0 +1,31 @@
+<form  [formGroup]="ship"  (ngSubmit)="onSubmit()" novalidate>
+    <label>
+      <span>Nombre</span>
+      <input
+        type="text"
+        placeholder="Nombre de embarcación"
+        formControlName="name">
+    </label>
+    <label>
+        <span>Posición</span>
+        <input
+          type="text"
+          placeholder="Posicion"
+          formControlName="position">
+      </label>
+      <label>
+        <span>Destino</span>
+        <input
+          type="text"
+          placeholder="Destino"
+          formControlName="destination">
+      </label>
+      <label>
+        <span>Dirección</span>
+        <input
+          type="text"
+          placeholder="dirección"
+          formControlName="direction">
+      </label>
+      <button>Guardar</button>
+  </form>

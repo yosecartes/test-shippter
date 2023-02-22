@@ -5,6 +5,7 @@ import { ListShipsService } from '../list-ships.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 import { DialogUpdateComponent } from '../dialog-update/dialog-update.component';
+import { DialogNewComponent } from '../dialog-new/dialog-new.component';
 
 @Component({
   selector: 'app-list-ships',
@@ -39,7 +40,7 @@ export class ListShipsComponent implements AfterViewInit, OnInit {
 
   openDialogDelete(enterAnimationDuration: string, exitAnimationDuration: string, ship: any): void {
     this.dialog.open(DialogDeleteComponent, {
-      width: '250px',
+      width: '700px',
       enterAnimationDuration,
       exitAnimationDuration,
       data: ship
@@ -48,13 +49,19 @@ export class ListShipsComponent implements AfterViewInit, OnInit {
 
   openDialogUpdate(enterAnimationDuration: string, exitAnimationDuration: string, ship: any): void {
     this.dialog.open(DialogUpdateComponent, {
-      width: '250px',
+      width: '700px',
       enterAnimationDuration,
       exitAnimationDuration,
       data: ship
     });
+  }
 
-
+  openDialogNew(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(DialogNewComponent, {
+      width: '700px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
   }
 
 }
