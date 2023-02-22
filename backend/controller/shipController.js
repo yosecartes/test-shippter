@@ -5,12 +5,22 @@ const arrayData = JSON.parse(data)
 
 
 exports.get = function (res, req) {
-    let id = res.query.id
+    let id = res.query.id;
+    let page = res.query.page || 1;
+    let limit = res.query.limit || 15;
+
+    //Detalle de una embarcacion
     if (id) {
         let result = arrayData.find(el => el.id === Number(id))
         return req.json(result)
     }
-    return req.json(arrayData)
+
+    //Paginacion
+    let end = page * limit
+    let init =( page - 1 )* limit ;
+
+    let result = arrayData.slice(init , end)
+    return req.json(result)
 }
 
 exports.new = function (res, req) {
