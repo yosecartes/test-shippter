@@ -1,0 +1,161 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Documentación para prueba Shippter",
+        "version": "1.0.",
+        "title": "Swagger Ship",
+        "termsOfService": "http://swagger.io/terms/"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "ship",
+            "description": "Métodos CRUD embarcaciones"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/ship": {
+            "get": {
+                "tags": [
+                    "ship"
+                ],
+                "summary": "Obtiene registros",
+                "description": "Obtiene todas las embarcaciones o de alguna en específico por ID",
+                "operationId": "Traer datos",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "cantidad de registros a obtener",
+                        "default": 5,
+                        "type": "number"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Página a obtener",
+                        "default": 1,
+                        "type": "number"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id de embarcación",
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok!"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "ship"
+                ],
+                "summary": "Guardar nuevo registro",
+                "description": "Guarda nueva embarcación",
+                "operationId": "Guardar datos",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Objeto para nueva embarcación",
+                        "required": true,
+                        "schema": {
+                            "type":"object",
+                            "properties": {
+                                "name":{
+                                    "type":"string"
+                                },
+                                "position":{
+                                    "type":"integer"
+                                },
+                                "destination":{
+                                    "type":"string"
+                                },
+                                "direction":{
+                                    "type":"string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok!"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "ship"
+                ],
+                "summary": "Actualizar registro",
+                "description": "Actualizar embarcación existente",
+                "operationId": "Guardar datos",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Datos a actualizar para embarcación",
+                        "required": true,
+                        "schema": {
+                            "type":"object",
+                            "properties": {
+                                "id":{
+                                    "type":"number",
+                                    "required": true
+                                },
+                                "name":{
+                                    "type":"string"
+                                },
+                                "position":{
+                                    "type":"integer"
+                                },
+                                "destination":{
+                                    "type":"string"
+                                },
+                                "direction":{
+                                    "type":"string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok!"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "ship"
+                ],
+                "summary": "Eliminar registro",
+                "description": "Elimina embarcación de los datos por ID",
+                "operationId": "Eliminar datos",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ID embarcación",
+                        "type": "number",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok!"
+                    }
+                }
+            }
+        }
+    }
+}
