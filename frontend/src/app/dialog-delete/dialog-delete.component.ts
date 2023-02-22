@@ -25,7 +25,8 @@ export class DialogDeleteComponent {
     }
     
     closeDialog(){
-      this.dialog.closeAll()
+      this.dialog.closeAll();
+      location.reload();
     }
 }
 
