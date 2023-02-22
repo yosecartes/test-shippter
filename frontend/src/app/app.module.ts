@@ -15,6 +15,8 @@ import { DialogUpdateComponent } from './dialog-update/dialog-update.component';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogNewComponent } from './dialog-new/dialog-new.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { DialogNewComponent } from './dialog-new/dialog-new.component';
     MatButtonModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
