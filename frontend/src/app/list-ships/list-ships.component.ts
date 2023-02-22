@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ListShipsService } from './list-ships.service';
-import {MatDialog } from '@angular/material/dialog';
+import  {MatDialog } from '@angular/material/dialog';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 import { DialogUpdateComponent } from '../dialog-update/dialog-update.component';
 
@@ -52,6 +52,10 @@ export class ListShipsComponent implements AfterViewInit, OnInit {
       exitAnimationDuration,
       data: ship
     });
+
+    this.dialog.afterAllClosed.subscribe(res=>{
+      console.log(res)
+    })
   }
 
 }
