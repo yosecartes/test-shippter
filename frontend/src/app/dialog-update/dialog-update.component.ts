@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ListShipsService } from '../list-ships/list-ships.service';
+import { ListShipsService } from '../list-ships.service';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./dialog-update.component.css']
 })
 export class DialogUpdateComponent implements OnInit {
-  constructor(public dialog: MatDialog,
+  constructor(
+    public dialog: MatDialog,
     public dialogRef: MatDialogRef<DialogUpdateComponent>,
     private listShipService: ListShipsService,
     @Inject(MAT_DIALOG_DATA)

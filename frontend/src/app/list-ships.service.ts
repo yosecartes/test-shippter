@@ -34,4 +34,8 @@ export class ListShipsService {
     return this.http.put(this.url, data, this.httpOptions);
   }
 
+  deleteShip(id:number){
+    return this.http.delete(this.url+'?id='+id, this.httpOptions)
+  }
+
 }
