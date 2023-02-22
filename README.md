@@ -17,6 +17,8 @@ npm i
 ```
 el proyecto se levantará en localhost:3000 <http://localhost:3000>
 
+Documentación Swagger aquí <http://localhost:3000/api/docs/#> 
+
 ## Frontend
 
 Requisitos:
